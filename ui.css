@@ -113,32 +113,3 @@ html[data-theme="light"] .whitetext {
     gap: 10px;
   }
 }
-
-/* Theme toggle button */
-#themeSwitcher {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: var(--nav-link-bg-dark);
-  color: var(--text-dark);
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 1000;
-}
-
-#themeSwitcher:hover {
-  background-color: var(--nav-link-hover-bg-dark);
-}
-
-html[data-theme="light"] #themeSwitcher {
-  background-color: var(--nav-link-bg-light);
-  color: var(--text-light);
-}
-
-html[data-theme="light"] #themeSwitcher:hover {
-  background-color: var(--nav-link-hover-bg-light);
-}

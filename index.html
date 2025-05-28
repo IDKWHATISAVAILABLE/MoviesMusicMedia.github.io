@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <title>Ts Pmo 🥀</title>
@@ -8,20 +8,9 @@
   <link rel="stylesheet" href="toggle.css">
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
 </head>
-
+<body>
   <button id="themeSwitcher">🌙 Toggle Theme</button>
 
-  <script>
-    const toggle = document.getElementById('themeSwitcher');
-    toggle.addEventListener('click', () => {
-      const html = document.documentElement;
-      const isDark = html.getAttribute('data-theme') === 'dark';
-      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-      toggle.textContent = isDark ? '☀️ Toggle Theme' : '🌙 Toggle Theme';
-    });
-  </script>
-
-<body>
   <header class="navbar">
     <p class="whitetext pixel-sans nocopy" style="font-size: 50px;" title="HELLP MEE">
       Movies. Media. Music.
@@ -48,5 +37,14 @@
     &copy; 2025 MediaHub. All rights reserved.
   </footer>
 
+  <script>
+    const toggle = document.getElementById('themeSwitcher');
+    toggle.addEventListener('click', () => {
+      const html = document.documentElement;
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      toggle.textContent = isDark ? '☀️ Toggle Theme' : '🌙 Toggle Theme';
+    });
+  </script>
 </body>
 </html>

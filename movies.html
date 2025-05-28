@@ -8,22 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
 </head>
-
-  <button id="themeSwitcher">🌙 Toggle Theme</button>
-
-  <script>
-    const toggle = document.getElementById('themeSwitcher');
-    toggle.addEventListener('click', () => {
-      const html = document.documentElement;
-      const isDark = html.getAttribute('data-theme') === 'dark';
-      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-      toggle.textContent = isDark ? '☀️ Toggle Theme' : '🌙 Toggle Theme';
-    });
-  </script>
-
 <!-- https://archive.org/download/movies_202211 -->
-
 <body>
+  	<button id="themeSwitcher">🌙 Toggle Theme</button>
+	
     <hr>
     <p class="whitetext pixel-sans nocopy" style="font-size: 50px;" title="HELP ME">
         Movies. Media. Music.
@@ -38,6 +26,16 @@
         <li><a href="help.html">Help</a></li>
       </ul>
     </nav>
+ 
+ <script>
+    const toggle = document.getElementById('themeSwitcher');
+    toggle.addEventListener('click', () => {
+      const html = document.documentElement;
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      toggle.textContent = isDark ? '☀️ Toggle Theme' : '🌙 Toggle Theme';
+    });
+  </script>
 </body>
 
 <hr>

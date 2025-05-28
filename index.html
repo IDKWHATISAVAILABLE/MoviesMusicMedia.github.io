@@ -9,6 +9,18 @@
 </head>
 <body>
 
+  <button id="themeSwitcher">🌙 Toggle Theme</button>
+
+  <script>
+    const toggle = document.getElementById('themeSwitcher');
+    toggle.addEventListener('click', () => {
+      const html = document.documentElement;
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      toggle.textContent = isDark ? '☀️ Toggle Theme' : '🌙 Toggle Theme';
+    });
+  </script>
+
   <header class="navbar">
     <p class="whitetext pixel-sans nocopy" style="font-size: 50px;" title="HELLP MEE">
       Movies. Media. Music.

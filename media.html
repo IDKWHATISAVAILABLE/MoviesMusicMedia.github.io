@@ -4,9 +4,24 @@
     <title>😯</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" sizes="16x16">
     <link rel="stylesheet" type="text/css" href="ui.css">
+    <link rel="stylesheet" href="toggle.css">
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
 </head>
+
+  <button id="themeSwitcher">🌙 Toggle Theme</button>
+
+  <script>
+    const toggle = document.getElementById('themeSwitcher');
+    toggle.addEventListener('click', () => {
+      const html = document.documentElement;
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      toggle.textContent = isDark ? '☀️ Toggle Theme' : '🌙 Toggle Theme';
+    });
+  </script>
+
 <body>
+
     <hr>
     <p class="whitetext pixel-sans nocopy" style="font-size: 50px;" title="HELP ME">
         Movies. Media. Music.

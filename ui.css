@@ -1,8 +1,27 @@
-body {
-  background-color: #222;
-  color: white;
-  font-family: "Pixelify Sans", sans-serif;
-  line-height: 1.6;
+:root {
+  --bg-dark: #222;
+  --text-dark: white;
+  --nav-bg-dark: #222;
+  --nav-link-bg-dark: #444;
+  --nav-link-hover-bg-dark: #555;
+  --nav-link-hover-color-dark: #00d4ff;
+
+  --bg-light: #f0f0f0;
+  --text-light: #111;
+  --nav-bg-light: #eee;
+  --nav-link-bg-light: #ddd;
+  --nav-link-hover-bg-light: #ccc;
+  --nav-link-hover-color-light: #0077aa;
+}
+
+html[data-theme="dark"] {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+html[data-theme="light"] {
+  background-color: var(--bg-light);
+  color: var(--text-light);
 }
 
 * {
@@ -11,9 +30,25 @@ body {
   box-sizing: border-box;
 }
 
+/* Body styling */
+body {
+  /* For your site, not full screen center layout; remove height and flex from previous */
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+  font-family: "Pixelify Sans", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+/* Navbar */
 .navbar {
-  background: #222;
+  background: var(--nav-bg-dark);
   padding: 10px 0;
+}
+
+html[data-theme="light"] .navbar {
+  background: var(--nav-bg-light);
 }
 
 .navbar ul {
@@ -26,21 +61,36 @@ body {
 
 .navbar ul li a {
   text-decoration: none;
-  color: white;
+  color: var(--text-dark);
   padding: 10px 15px;
-  background: #444;
+  background: var(--nav-link-bg-dark);
   border-radius: 5px;
   transition: background 0.3s, color 0.3s;
 }
 
-.navbar ul li a:hover {
-  background: #555;
-  color: #00d4ff;
+html[data-theme="light"] .navbar ul li a {
+  color: var(--text-light);
+  background: var(--nav-link-bg-light);
 }
 
+.navbar ul li a:hover {
+  background: var(--nav-link-hover-bg-dark);
+  color: var(--nav-link-hover-color-dark);
+}
+
+html[data-theme="light"] .navbar ul li a:hover {
+  background: var(--nav-link-hover-bg-light);
+  color: var(--nav-link-hover-color-light);
+}
+
+/* Text classes */
 .whitetext {
-  color: white;
+  color: var(--text-dark);
   text-align: center;
+}
+
+html[data-theme="light"] .whitetext {
+  color: var(--text-light);
 }
 
 .pixel-sans {
@@ -55,10 +105,40 @@ body {
   font-family: "Jaro", sans-serif;
 }
 
+/* Responsive nav for small screens */
 @media (max-width: 600px) {
   .navbar ul {
     flex-direction: column;
     align-items: center;
     gap: 10px;
   }
+}
+
+/* Theme toggle button */
+#themeSwitcher {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: var(--nav-link-bg-dark);
+  color: var(--text-dark);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+#themeSwitcher:hover {
+  background-color: var(--nav-link-hover-bg-dark);
+}
+
+html[data-theme="light"] #themeSwitcher {
+  background-color: var(--nav-link-bg-light);
+  color: var(--text-light);
+}
+
+html[data-theme="light"] #themeSwitcher:hover {
+  background-color: var(--nav-link-hover-bg-light);
 }

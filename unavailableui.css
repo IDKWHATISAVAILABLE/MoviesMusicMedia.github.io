@@ -1,19 +1,16 @@
-body{
-	background-color: #222
-}
-
-.go-back {
-    font-size: 250px;
-    font-weight: bold;
-    text-align: center;
-}
-
 body {
+    background-color: #222;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
     font-family: 'Pixelify Sans', sans-serif;
-    background-color: #222;
+}
+
+.go-back {
+    font-size: 250px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
 }
